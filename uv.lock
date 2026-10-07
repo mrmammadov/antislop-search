@@ -1057,14 +1057,10 @@ dependencies = [
     { name = "meilisearch" },
     { name = "numpy" },
     { name = "opensearch-py" },
-    { name = "playwright" },
     { name = "psycopg", extra = ["binary"] },
-    { name = "pymupdf" },
     { name = "qdrant-client" },
     { name = "sqlite-vec" },
     { name = "tokenizers" },
-    { name = "trafilatura" },
-    { name = "youtube-transcript-api" },
 ]
 
 [package.metadata]
@@ -1076,14 +1072,10 @@ requires-dist = [
     { name = "meilisearch", specifier = ">=0.43.0" },
     { name = "numpy", specifier = ">=2.5.3" },
     { name = "opensearch-py", specifier = ">=3.2.0" },
-    { name = "playwright", specifier = ">=1.63.0" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.6" },
-    { name = "pymupdf", specifier = ">=1.28.2" },
     { name = "qdrant-client", specifier = ">=1.19.1" },
     { name = "sqlite-vec", specifier = ">=0.1.9" },
     { name = "tokenizers", specifier = ">=0.23.2" },
-    { name = "trafilatura", specifier = ">=2.3.0" },
-    { name = "youtube-transcript-api", specifier = ">=1.2.4" },
 ]
 
 [[package]]
