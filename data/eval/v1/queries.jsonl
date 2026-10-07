@@ -1,0 +1,33 @@
+{"qid": "q001", "query": "steve jobs speech about connecting the dots", "source": "generated", "kind": "known_item", "notes": "shares vocab with the speech text; Make Something Wonderful (book) also contains the speech"}
+{"qid": "q002", "query": "commencement speech where he says what he regrets most is not being kind enough", "source": "generated", "kind": "known_item", "notes": "paraphrase: doc says 'failures of kindness'; no author/title words"}
+{"qid": "q003", "query": "speech about two young fish who don't know what water is", "source": "generated", "kind": "known_item", "notes": "no author; title word 'water' only"}
+{"qid": "q004", "query": "hamming you and your research", "source": "generated", "kind": "known_item", "notes": "title words; two Hamming lectures in corpus"}
+{"qid": "q005", "query": "paul graham life is short", "source": "generated", "kind": "known_item", "notes": "author + title words"}
+{"qid": "q006", "query": "commencement speech telling graduates they are not special", "source": "generated", "kind": "known_item", "notes": "title words"}
+{"qid": "q007", "query": "harry potter author talk about failure", "source": "generated", "kind": "known_item", "notes": "no author/title words except 'failure'; text mentions Harry Potter"}
+{"qid": "q008", "query": "professor with terminal cancer gives his last lecture", "source": "generated", "kind": "known_item", "notes": "no title/author words; Pausch"}
+{"qid": "q009", "query": "coach of michael phelps on what makes a champion", "source": "generated", "kind": "known_item", "notes": "Bob Bowman; 'Phelps' appears once in text"}
+{"qid": "q010", "query": "study of competitive swimmers showing top performance is made of small ordinary things", "source": "generated", "kind": "known_item", "notes": "paraphrase of 'Mundanity of Excellence' (Chambliss)"}
+{"qid": "q011", "query": "essay about what you think about in the shower", "source": "generated", "kind": "known_item", "notes": "paraphrase-ish; PG 'The Top Idea in Your Mind'"}
+{"qid": "q012", "query": "university of chicago lecture on writing for the reader, not explaining your ideas", "source": "generated", "kind": "known_item", "notes": "McEnerney; partial vocab"}
+{"qid": "q013", "query": "how to deal with procrastination", "source": "generated", "kind": "topical", "notes": "shared vocab: 'procrastination' is in many docs"}
+{"qid": "q014", "query": "I keep putting things off until the last minute", "source": "generated", "kind": "topical", "notes": "paraphrase of procrastination; avoids the word"}
+{"qid": "q015", "query": "advice for choosing what to work on", "source": "generated", "kind": "topical", "notes": "mixed vocab"}
+{"qid": "q016", "query": "is it worth getting an MBA", "source": "generated", "kind": "topical", "notes": "few docs discuss it directly; MBA/business school mentions are scattered"}
+{"qid": "q017", "query": "why getting enough sleep matters for doing good work", "source": "generated", "kind": "topical", "notes": "shared vocab 'sleep'"}
+{"qid": "q018", "query": "how to become a better writer", "source": "generated", "kind": "topical", "notes": "shared vocab 'writing'"}
+{"qid": "q019", "query": "learn a new skill fast", "source": "generated", "kind": "topical", "notes": "shared vocab"}
+{"qid": "q020", "query": "afraid of asking dumb questions", "source": "generated", "kind": "topical", "notes": "paraphrase: docs say 'look stupid', 'obvious questions', 'sound foolish'"}
+{"qid": "q021", "query": "hustle culture and working crazy long hours", "source": "generated", "kind": "topical", "notes": "partial vocab ('hustle'); burnout docs"}
+{"qid": "q022", "query": "feeling stuck and unmotivated, how do I get going again", "source": "generated", "kind": "topical", "notes": "paraphrase of 'rut'/'unstuck'"}
+{"qid": "q023", "query": "making a living from your art", "source": "generated", "kind": "topical", "notes": "shared vocab"}
+{"qid": "q024", "query": "cognitive biases", "source": "generated", "kind": "topical", "notes": "shared vocab, entity-like"}
+{"qid": "q025", "query": "taking big risks early in your career", "source": "generated", "kind": "topical", "notes": "mixed vocab"}
+{"qid": "q026", "query": "surround yourself with ambitious people", "source": "generated", "kind": "topical", "notes": "paraphrase: docs say 'find your people', 'peers', 'friends'"}
+{"qid": "q027", "query": "staying focused in a world of distractions", "source": "generated", "kind": "topical", "notes": "shared vocab focus/distraction"}
+{"qid": "q028", "query": "thinking for yourself instead of following the crowd", "source": "generated", "kind": "topical", "notes": "partial vocab; conformity/independence docs"}
+{"qid": "q029", "query": "money won't make you happy", "source": "generated", "kind": "topical", "notes": "paraphrase; docs say wealth/enough/success"}
+{"qid": "q030", "query": "small consistent daily habits compound over time", "source": "generated", "kind": "topical", "notes": "shared vocab with several docs"}
+{"qid": "q031", "query": "where do creative ideas come from", "source": "generated", "kind": "topical", "notes": "paraphrase-ish for creativity docs"}
+{"qid": "q032", "query": "remembering that you will die as a way to live better", "source": "generated", "kind": "topical", "notes": "paraphrase of mortality/death themes"}
+{"qid": "q033", "query": "keep learning and reinventing yourself as you get older", "source": "generated", "kind": "topical", "notes": "paraphrase of self-renewal"}

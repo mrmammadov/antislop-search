@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+data/fetched/manifest.tmp
+# Raw page snapshots (33MB) — reproducible via extract/fetch.py; manifest.jsonl is tracked.
+data/fetched/antislop/
+data/fetched/source/
+# Derived, rebuildable
+data/embeddings/

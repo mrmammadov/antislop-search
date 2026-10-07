@@ -1,0 +1,9 @@
+# Extraction run tracker — one line per run, newest last.
+# The extract script appends here and skips re-fetching unless the last run is older than the threshold (or --force).
+# format: <ISO date> | <source csv> | <urls total> | <fetched> | <cached/skipped> | <failed>
+2026-10-06T10:34:10+00:00 | resolve | antislop.csv | total=3 done=3 cached=0 failed=0
+2026-10-06T10:37:34+00:00 | resolve | antislop.csv | total=177 done=174 cached=3 failed=0
+2026-10-06T10:39:43+00:00 | fetch | antislop.csv | total=177 done=162 cached=0 failed=15
+2026-10-06T10:40:53+00:00 | fetch | antislop.csv | total=177 done=3 cached=162 failed=12
+2026-10-06T10:43:27+00:00 | fetch | antislop.csv | total=177 done=4 cached=160 failed=13
+2026-10-06T13:05:40+00:00 | fetch | antislop.csv | total=177 done=0 cached=157 failed=20
