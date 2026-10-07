@@ -1,5 +1,7 @@
 # antislop-search
 
+Read `MEMORY.md` first: owner preferences, project history, numbers and decisions so far.
+
 Personal search web app over the antislop corpus — for the owner's daily use, not benchmarking
 (benchmarking lives in `../search_experiments`). Python 3.13, run everything with `uv run`.
 
