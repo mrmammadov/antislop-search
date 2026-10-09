@@ -2,10 +2,11 @@
 __pycache__/
 *.pyc
 .DS_Store
-data/fetched/manifest.tmp
-# Raw page snapshots (33MB) — reproducible via extract/fetch.py; manifest.jsonl is tracked.
-data/fetched/antislop/
-data/fetched/source/
+# Corpus: third-party texts (essays, transcripts, antislop's export) — kept local, not published.
+# Rebuild with extract/ (see extract/README.md) or copy from a machine that has them.
+data/raw/
+data/fetched/
+data/clean/
 # Derived, rebuildable
 data/embeddings/
 
