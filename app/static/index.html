@@ -74,10 +74,7 @@
   </form>
 
   <div class="knobs">
-    <label>engine <select id="engine"></select></label>
     <label>mode <select id="retrieval"></select></label>
-    <label>chunks <select id="chunker"></select></label>
-    <label>model <select id="embedder"></select></label>
   </div>
   <div id="status" class="status"></div>
   <div id="filters" class="filters"></div>
@@ -86,7 +83,7 @@
 
 <script>
 const $ = (id) => document.getElementById(id);
-const KNOBS = ["engine", "retrieval", "chunker", "embedder"];
+const KNOBS = ["retrieval"];
 let last = null, typeFilter = null;
 
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -100,25 +97,15 @@ function highlight(text, terms) {
 }
 
 function fill(sel, values, value) {
-  sel.innerHTML = values.map((v) => {
-    const id = typeof v === "string" ? v : v.id;
-    const label = typeof v === "string" ? v : v.id + (v.docker ? " (docker)" : "");
-    return `<option value="${esc(id)}">${esc(label)}</option>`;
-  }).join("");
+  sel.innerHTML = values.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
   sel.value = value;
 }
-
-function syncEmbedder() { $("embedder").disabled = $("retrieval").value === "bm25"; }
 
 async function init() {
   const o = await (await fetch("/api/options")).json();
   const p = new URLSearchParams(location.search);
-  fill($("engine"), o.engines, p.get("engine") || o.defaults.engine);
   fill($("retrieval"), o.retrieval, p.get("retrieval") || o.defaults.retrieval);
-  fill($("chunker"), o.chunkers, p.get("chunker") || o.defaults.chunker);
-  fill($("embedder"), o.embedders, p.get("embedder") || o.defaults.embedder);
   $("sub").textContent = `Search ${o.n_docs} essays, talks and videos you've collected.`;
-  syncEmbedder();
   if (p.get("q")) { $("q").value = p.get("q"); run(false); }
 }
 
@@ -128,9 +115,7 @@ async function run(push = true) {
   const params = new URLSearchParams({ q, ...Object.fromEntries(KNOBS.map((k) => [k, $(k).value])) });
   if (push) history.pushState(null, "", "?" + params);
   const slow = setTimeout(() => {
-    $("status").textContent = $("engine").selectedOptions[0].text.includes("docker")
-      ? "First search with this setup: starting the engine and building the index…"
-      : "First search with this setup: building the index (embedding can take a minute)…";
+    $("status").textContent = "First search with this setup: building the index (embedding can take a minute)…";
   }, 400);
   $("status").className = "status"; $("status").textContent = "Searching…";
   try {
@@ -167,8 +152,7 @@ function render() {
 }
 
 $("f").addEventListener("submit", (e) => { e.preventDefault(); run(); });
-$("retrieval").addEventListener("change", () => { syncEmbedder(); run(); });
-["engine", "chunker", "embedder"].forEach((k) => $(k).addEventListener("change", () => run()));
+$("retrieval").addEventListener("change", () => run());
 $("filters").addEventListener("click", (e) => {
   const t = e.target.closest(".chip")?.dataset.t; if (!t) return;
   typeFilter = typeFilter === t ? null : t; render();
@@ -177,7 +161,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "/" && document.activeElement !== $("q")) { e.preventDefault(); $("q").focus(); }
 });
 window.addEventListener("popstate", () => { const p = new URLSearchParams(location.search);
-  KNOBS.forEach((k) => p.get(k) && ($(k).value = p.get(k))); $("q").value = p.get("q") || ""; syncEmbedder(); if ($("q").value) run(false); });
+  KNOBS.forEach((k) => p.get(k) && ($(k).value = p.get(k))); $("q").value = p.get("q") || ""; if ($("q").value) run(false); });
 init();
 </script>
 </body>

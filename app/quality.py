@@ -1,7 +1,7 @@
 """Quality check: score knob combinations against the app's eval set (data/eval/v1).
 
-    uv run -m app.quality                                   # the default knobs
-    uv run -m app.quality --engine sqlite --chunker para256 --retrieval hybrid
+    uv run -m app.quality                                   # what the app serves
+    uv run -m app.quality --chunker para400 --retrieval bm25  # try another setup
 
 Run it before/after changing a default, to see whether search got better or worse.
 v1 = 33 queries (known-item + topical) with graded judgments; partial, see data/eval/v1/README.md.
@@ -13,7 +13,7 @@ import statistics
 from pathlib import Path
 
 from app.search import DEFAULTS, ROOT, SearchService
-from bench.metrics import all_metrics
+from app.retrieval.metrics import all_metrics
 
 EVAL = ROOT / "data" / "eval" / "v1"
 
@@ -34,7 +34,7 @@ def main() -> None:
         qrels.setdefault(r["qid"], {})[r["doc_id"]] = r["grade"]
 
     svc = SearchService()
-    cfg = svc.config(a.engine, a.retrieval, a.chunker, a.embedder)
+    cfg = svc.config(a.retrieval, a.chunker, a.embedder)
     pipe, _ = svc.pipeline(cfg)
     by_kind: dict[str, list[dict]] = {}
     for q in queries:

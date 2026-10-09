@@ -4,14 +4,22 @@ version = "0.1.0"
 requires-python = ">=3.13,<3.14"
 dependencies = [
     "fastapi>=0.142.2",
+    "fastembed>=0.9.0",
+    "numpy>=2.5.3",
+    "sqlite-vec>=0.1.9",
+    "tokenizers>=0.23.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+extract = [
     "httpx>=0.28.1",
     "playwright>=1.63.0",
     "pymupdf>=1.28.2",
-    "search-experiments",
     "trafilatura>=2.3.1",
-    "uvicorn[standard]>=0.54.0",
     "youtube-transcript-api>=1.2.4",
 ]
 
-[tool.uv.sources]
-search-experiments = { path = "../search_experiments", editable = true }
+[tool.uv]
+# extract/ needs these locally; the server skips them: uv sync --no-default-groups
+default-groups = ["extract"]

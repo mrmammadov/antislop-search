@@ -8,3 +8,6 @@ data/fetched/antislop/
 data/fetched/source/
 # Derived, rebuildable
 data/embeddings/
+
+# Session handoff notes for agents; local only for now
+MEMORY.md
